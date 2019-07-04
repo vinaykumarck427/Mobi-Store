@@ -22,3 +22,14 @@ module.exports.create = ('/',(req,res) => {
             res.json(err)
         })
 })
+
+module.exports.show = (req,res) => {
+    const id = req.params.id
+    Product.findById(id)
+        .then((product) => {
+            res.json(product)
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+}
