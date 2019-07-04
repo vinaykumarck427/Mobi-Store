@@ -143,4 +143,4 @@ const SpecificationSchema = new Schema({
 
 const Specification = mongoose.model('Specification', SpecificationSchema)
 
-module.export = Specification
+module.exports = Specification

@@ -21,4 +21,4 @@ const NetworkSchema = new Schema ({
 
 const Network = mongoose.model('Network', NetworkSchema)
 
-module.export = Network
+module.exports = Network

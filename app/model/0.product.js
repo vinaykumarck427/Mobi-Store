@@ -13,12 +13,12 @@ const ProductSchema = new Schema({
     },
     productPrice:{
         type: Number,
-        default: 123,
-        required: true
+        default: 123
 
     },
     reviews:{
-        type: String
+        type: String,
+        default: 'null'
     },
     specification:{
         type: String,
@@ -32,4 +32,4 @@ const ProductSchema = new Schema({
 
 const Product = mongoose.model('Product', ProductSchema)
 
-module.export = Product
+module.exports = Product

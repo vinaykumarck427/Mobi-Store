@@ -5,4 +5,7 @@ const specificationController = require('../app/controller/1.specificationContro
 const userController = require('../app/controller/2.userController')
 const compareController = require('../app/controller/3.compareController')
 
+router.get('/product',productController.list)
+router.post('/product',productController.create)
+
 module.exports = router
