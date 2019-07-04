@@ -6,11 +6,11 @@ const NetworkSchema = new Schema ({
     network:{
         fourG:{
             type: Boolean,
-            required: true
+            default: false
         },
         threeG:{
             type: Boolean,
-            required: true
+            default: false
         },
         twoG:{
             type: Boolean,

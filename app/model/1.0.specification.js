@@ -8,8 +8,7 @@ const SpecificationSchema = new Schema({
         required: true
     },
     brand:{
-        type: String,
-        required: true
+
     },
     operatingSystem:{
         type: String,
@@ -17,27 +16,29 @@ const SpecificationSchema = new Schema({
     },
     type:{
         type: String,
-        required: true
+        default: 'SmartPhone'
     },
     simSlot:{
         simOne:{
             type: String,
             network: String,
+            isVolTE: Boolean,
             required: true
         },
         simTwo:{
             type: String,
             network: String,
-            required: true
+            isVolTE: Boolean,
+            default:'null'
         }
     },
     isFingerPrintSensor:{
         type: Boolean,
-        required: true
+        default: falsr
     },
     isQuickCharging:{
         type: Boolean,
-        required: true
+        default: false
     },
     designDimensions:{
         height:{
@@ -84,15 +85,13 @@ const SpecificationSchema = new Schema({
         },
         
     },
-    performance:{
-        chipset:{
-            type: String,
-            required: true
-        },
-        processor:{
-            type: String,
-            required: true
-        }
+    chipset:{
+        type: String,
+        required: true
+    },
+    processor:{
+        type: String,
+        required: true
     },
     ram:{
         type: Number,
@@ -102,12 +101,44 @@ const SpecificationSchema = new Schema({
         type: Number,
         required: true
     },
-    camera:{},
-    battery:{},
-    connectivity:{},
-    multimedia:{},
-    speacialFeature:{}
-    
+    cameraFrnt:{},
+    cameraBack:{},
+    battery:{
+        capacity:{
+            type: Number,
+            required: true
+        },
+        replaceable:{
+            type: Boolean,
+            default: false
+        }
+    },
+    connectivity:{
+        wifi:{
+            type: String,
+            default: '2.4 only'
+        },
+        bluetooth:{
+            type: String,
+            default:'4.0',
+        },
+        gps:{
+            type: String,
+            required: true
+        }
+    },
+    connector:{
+        type: String,
+        default: 'micro-USB'
+    },
+    multimedia:{
+        type: String,
+        default: 'FM Radio'
+    },
+    specialFeature:{
+        type: String,
+        default: 'null'
+    }    
 })
 
 const Specification = mongoose.model('Specification', SpecificationSchema)
