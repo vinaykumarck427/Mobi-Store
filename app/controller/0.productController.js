@@ -33,3 +33,15 @@ module.exports.show = (req,res) => {
             res.json(err)
         })
 }
+
+module.exports.update = (req,res) => {
+    const id = req.params.id
+    const body = req.body
+    Product.findByIdAndUpdate(id, {$set: body}, {new: true})
+        .then((product) => {
+            res.json(product)
+        })
+        .catch((err) => {
+            res.json(product)
+        })
+}

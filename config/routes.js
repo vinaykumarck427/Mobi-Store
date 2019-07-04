@@ -8,5 +8,6 @@ const compareController = require('../app/controller/3.compareController')
 router.get('/product',productController.list)
 router.get('/product/:id',productController.show)
 router.post('/product',productController.create)
+router.put('/product/:id',productController.update)
 
 module.exports = router
