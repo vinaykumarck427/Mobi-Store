@@ -34,7 +34,7 @@ const SpecificationSchema = new Schema({
     },
     isFingerPrintSensor:{
         type: Boolean,
-        default: falsr
+        default: false
     },
     isQuickCharging:{
         type: Boolean,

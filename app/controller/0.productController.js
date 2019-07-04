@@ -3,4 +3,3 @@ const Product = require('../model/0.product')
 
 
 
-module.exports = router

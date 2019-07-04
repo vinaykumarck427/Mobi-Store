@@ -3,4 +3,3 @@ const Compare = require('../model/3.compare')
 
 
 
-module.exports = router

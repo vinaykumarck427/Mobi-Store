@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const ProductSchema = new Schema({
-
     productName:{
         type: String,
         required: true
@@ -23,7 +22,7 @@ const ProductSchema = new Schema({
     },
     specification:{
         type: String,
-        default: abcd
+        default: 'abcd'
     },
     createdAt:{
         type: Date,

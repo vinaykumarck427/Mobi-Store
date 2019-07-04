@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 //connect to db
-mongoose.connect('mongodb://localhost:27017/notes-app-feb', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/mern-project-mobiapp', { useNewUrlParser: true })
     .then(() => {
         console.log('Connected to the DB')
     })
