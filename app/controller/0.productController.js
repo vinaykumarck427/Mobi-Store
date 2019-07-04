@@ -42,6 +42,17 @@ module.exports.update = (req,res) => {
             res.json(product)
         })
         .catch((err) => {
+            res.json(err)
+        })
+}
+
+module.exports.destroy = (req,res) => {
+    const id =req.parasms.id
+    Product.findByIdAndDelete(id)
+        .then((product) => {
             res.json(product)
+        })
+        .catch((err) => {
+            res.json(err)
         })
 }

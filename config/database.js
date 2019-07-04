@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 //connect express to mongo via mongoose
 //config the promise lib to be ES6 Promise
 mongoose.Promise = global.Promise
+mongoose.set('useFindAndModify',false)
 
 //connect to db
 mongoose.connect('mongodb://localhost:27017/mern-project-mobiapp', { useNewUrlParser: true })
