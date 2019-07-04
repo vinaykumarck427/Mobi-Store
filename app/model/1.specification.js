@@ -15,6 +15,10 @@ const SpecificationSchema = new Schema({
         type: String,
         required: true
     },
+    type:{
+        type: String,
+        required: true
+    },
     simSlot:{
         simOne:{
             type: String,
@@ -35,10 +39,69 @@ const SpecificationSchema = new Schema({
         type: Boolean,
         required: true
     },
-    design:{},
-    display:{},
-    performance:{},
-    storage:{},
+    designDimensions:{
+        height:{
+            type: Number,
+            required: true
+        },
+        width:{
+            type: Number,
+            required: true  
+        },
+        thickness:{
+            type: Number,
+            required: true
+        },
+        weight:{
+            type: Number,
+            required: true
+        },
+        color:{
+            type: String,
+            required: true
+        }
+    },
+    display:{
+        screenSize:{
+            type: Number,
+            required: true
+        },
+        screenResolution:{
+            type: Number,
+            required: true
+        },
+        aspectRatio:{
+            type: Number,
+            required: true
+        },
+        pixelDensity:{
+            type: Number,
+            required: true
+        },
+        displayType:{
+            type: String,
+            required: true
+        },
+        
+    },
+    performance:{
+        chipset:{
+            type: String,
+            required: true
+        },
+        processor:{
+            type: String,
+            required: true
+        }
+    },
+    ram:{
+        type: Number,
+        required: true
+    },
+    storage:{
+        type: Number,
+        required: true
+    },
     camera:{},
     battery:{},
     connectivity:{},
