@@ -30,7 +30,7 @@ class ProductForm extends React.Component {
                     </label><br />
                     <label>
                         Image <br />
-                        <input type = "text" value={this.state.image} onChange = {this.handleChange} name = "image"/>                        
+                        <button value={this.state.image} onClick = {this.handleChange} name = "image">Upload</button>                     
                     </label><br/>
                     <label>
                         Product Price <br />

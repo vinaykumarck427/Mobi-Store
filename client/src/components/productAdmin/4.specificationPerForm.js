@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SpecificationDisForm extends React.Component {
+class SpecificationPerForm extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -34,7 +34,10 @@ class SpecificationDisForm extends React.Component {
                     </label><br/>
                     <label>
                         Ram <br />
-                        <input type = "number" value={this.state.ram} onChange = {this.handleChange} name = "ram"/>
+                        <input type = "radio" value={4} onChange = {this.handleChange} name = "ram"/> 4
+                        <input type = "radio" value={8} onChange = {this.handleChange} name = "ram"/> 8
+                        <input type = "radio" value={10} onChange = {this.handleChange} name = "ram"/> 10
+                        <input type = "radio" value={12} onChange = {this.handleChange} name = "ram"/> 12
                     </label><br />
                     <label>
                         Internal Storage <br />
@@ -42,8 +45,8 @@ class SpecificationDisForm extends React.Component {
                     </label><br />
                     <label>
                         Expandable<br />
-                        <input type = "radio" value={this.state.isExpandable} onChange = {this.handleChange} name = "isExpandable"/> True
-                        <input type = "radio" value={this.state.isExpandable} onChange = {this.handleChange} name = "isExpandable"/> False
+                        <input type = "radio" value={true} onChange = {this.handleChange} name = "isExpandable"/> True
+                        <input type = "radio" value={false} onChange = {this.handleChange} name = "isExpandable"/> False
                     </label><br />
                 </form>
             </div>            
@@ -51,4 +54,4 @@ class SpecificationDisForm extends React.Component {
     }
 }
 
-export default SpecificationDisForm
+export default SpecificationPerForm

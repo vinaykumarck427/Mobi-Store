@@ -11,6 +11,8 @@ class SpecificationGeneralForm extends React.Component {
             simOne: '',
             simTwo: '',
             brand:'',
+            fourG:'',
+            threeG:'',
             brands: []
         }
         this.handleChange = this.handleChange.bind(this)
@@ -59,11 +61,25 @@ class SpecificationGeneralForm extends React.Component {
                     </label><br />
                     <label>
                         Sim One<br />
-                        <input type = "text" value={this.state.simOne} onChange = {this.handleChange} name = "simOne"/>
+                        <select value={this.state.simOne} name = "simOne" onChange={this.handleChange}>
+                            <option value="">Select</option>
+                            <option value="micro">Micro</option>
+                            <option value="micro">Mini</option>
+                            <option value="micro">Nano</option>
+                        </select>
+                        <input type = "radio" value={true} onChange = {this.handleChange} name = "fourG"/> 4G
+                        <input type = "radio" value={true} onChange = {this.handleChange} name = "threeG"/> 3G
                     </label><br />
                     <label>
-                        Sim Two<br />
-                        <input type = "text" value={this.state.simTwo} onChange = {this.handleChange} name = "simTwo"/>
+                    Sim One<br />
+                        <select value={this.state.simTwo} name = "simTwo" onChange={this.handleChange}>
+                            <option value="">Select</option>
+                            <option value="micro">Micro</option>
+                            <option value="micro">Mini</option>
+                            <option value="micro">Nano</option>
+                        </select>
+                        <input type = "radio" value={true} onChange = {this.handleChange} name = "fourG"/> 4G
+                        <input type = "radio" value={true} onChange = {this.handleChange} name = "threeG"/> 3G
                     </label><br />
                 </form>
             </div>            

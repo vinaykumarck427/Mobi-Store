@@ -10,7 +10,7 @@ class ProductPage extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('/product')
+        axios.get('/products')
         .then(response => {
             this.setState(() => ({
                 product: response.data

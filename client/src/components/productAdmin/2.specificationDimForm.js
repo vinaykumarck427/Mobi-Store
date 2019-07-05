@@ -43,7 +43,12 @@ class SpecificationDimForm extends React.Component {
                     </label><br />
                     <label>
                         Color <br />
-                        <input type = "text" value={this.state.colors} onChange = {this.handleChange} name = "colors"/>
+                        <select value={this.state.color} name = "color" onChange={this.handleChange}>
+                            <option value="">Select</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Blue">Blue</option>
+                        </select><br />
                     </label><br />
                 </form>
             </div>            

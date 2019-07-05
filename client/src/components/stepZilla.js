@@ -5,6 +5,7 @@ import ProductForm from './productAdmin/0.productForm'
 import SpecificationGeneralForm from './productAdmin/1.specificationGeneralForm'
 import SpecificationDimForm from './productAdmin/2.specificationDimForm'
 import SpecificationDisForm from './productAdmin/3.specificationDisForm'
+import SpecificationPerForm from './productAdmin/4.specificationPerForm'
 
 const steps =
     [
@@ -12,6 +13,7 @@ const steps =
       {name: 'General Specification',component: <SpecificationGeneralForm />},
       {name: 'Dimension Specification',component: <SpecificationDimForm />},
       {name: 'Display Specification',component: <SpecificationDisForm />},
+      {name: 'Performance Specification',component: <SpecificationPerForm />},
     ]
 
 class Steps extends React.Component {
