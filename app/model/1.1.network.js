@@ -14,7 +14,7 @@ const NetworkSchema = new Schema ({
         },
         twoG:{
             type: Boolean,
-            required: true
+            default: true
         }
     }
 })

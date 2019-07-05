@@ -14,15 +14,14 @@ const ProductSchema = new Schema({
     productPrice:{
         type: Number,
         default: 123
-
     },
     reviews:{
         type: String,
         default: 'null'
     },
     specification:{
-        type: String,
-        default: 'abcd'
+        type: Schema.Types.ObjectId,
+        ref: 'Specification'
     },
     createdAt:{
         type: Date,

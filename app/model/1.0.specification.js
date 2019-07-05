@@ -3,42 +3,43 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const SpecificationSchema = new Schema({
-    launchDate:{
-        type: Date,
-        required: true
-    },
-    brand:{
-        type:String
-    },
-    operatingSystem:{
-        type: String,
-        required: true
-    },
-    phoneType:{
-        type: String,
-        default: 'SmartPhone'
-    },
-    simSlot:{
-        simOne:{
-            type: String,
-            network: String,
-            isVolTE: Boolean,
+    general:{
+            launchDate:{
+            type: Date,
             required: true
         },
-        simTwo:{
+        brand:{
+            type: Schema.Types.ObjectId,
+            ref: 'Brand'
+        },
+        operatingSystem:{
             type: String,
-            network: String,
-            isVolTE: Boolean,
-            default:'null'
+            required: true
+        },
+        type:{
+            type: String,
+            default: 'SmartPhone'
+        },
+        simSlot:{
+            simOne:{
+                type: String,
+                isVolTE: Boolean,
+                required: true,
+                network:{
+                    type: Schema.Types.ObjectId,
+                    ref:'Network'
+                }
+            },
+            simTwo:{
+                type: String,
+                isVolTE: Boolean,
+                default:'null',
+                network:{
+                    type: Schema.Types.ObjectId,
+                    ref: 'network'
+                }
+            }
         }
-    },
-    isFingerPrintSensor:{
-        type: Boolean,
-        default: false
-    },
-    isQuickCharging:{
-        type: Boolean,
-        default: false
     },
     designDimensions:{
         height:{
@@ -85,24 +86,38 @@ const SpecificationSchema = new Schema({
         },
         
     },
-    chipset:{
-        type: String,
-        required: true
+    performance:{
+        chipset:{
+            type: String,
+            required: true
+        },
+        processor:{
+            type: String,
+            required: true
+        },
+        ram:{
+            type: Number,
+            required: true
+        },
+        storage:{
+            internalMemory:{
+                type: Number,
+                default: 16
+            },
+            isExpandable:{
+                type: String,
+                default:false
+            }
+        }
     },
-    processor:{
-        type: String,
-        required: true
+    cameraFrnt:{
+        type: Schema.Types.ObjectId,
+        ref: 'Camera'
     },
-    ram:{
-        type: Number,
-        required: true
+    cameraBack:{
+        type: Schema.Types.ObjectId,
+        ref: 'Camera'
     },
-    storage:{
-        type: Number,
-        required: true
-    },
-    cameraFrnt:{},
-    cameraBack:{},
     battery:{
         capacity:{
             type: Number,
@@ -124,7 +139,7 @@ const SpecificationSchema = new Schema({
         },
         gps:{
             type: String,
-            required: true
+            default: true
         }
     },
     connector:{
@@ -136,8 +151,18 @@ const SpecificationSchema = new Schema({
         default: 'FM Radio'
     },
     specialFeature:{
-        type: String,
-        default: 'null'
+        isFingerPrintSensor:{
+            type: Boolean,
+            default: false
+        },
+        isQuickCharging:{
+            type: Boolean,
+            default: false
+        },
+        audioJack:{
+            type: String,
+            default: '3.5mm'
+        }
     }    
 })
 
