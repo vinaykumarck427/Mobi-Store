@@ -16,7 +16,7 @@ const SpecificationSchema = new Schema({
             type: String,
             required: true
         },
-        type:{
+        phonetype:{
             type: String,
             default: 'SmartPhone'
         },

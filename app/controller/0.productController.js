@@ -42,7 +42,7 @@ module.exports.update = (req,res) => {
             res.json(product)
         })
         .catch((err) => {
-            res.json(err)
+            res.send(err)
         })
 }
 
@@ -53,6 +53,6 @@ module.exports.destroy = (req,res) => {
             res.json(product)
         })
         .catch((err) => {
-            res.json(err)
+            res.send(err)
         })
 }
