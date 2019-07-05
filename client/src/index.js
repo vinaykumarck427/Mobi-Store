@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Route, Link,Switch} from 'react-render-dom'
+import {BrowserRouter, Route, Link,Switch} from 'react-router-dom'
 
 class App extends React.Component{
     render(){

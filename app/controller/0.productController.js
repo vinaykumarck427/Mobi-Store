@@ -19,7 +19,7 @@ module.exports.create = ('/',(req,res) => {
             res.json(products)
         })
         .catch((err) =>{
-            res.json(err)
+            res.send(err)
         })
 })
 
