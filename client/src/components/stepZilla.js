@@ -6,6 +6,7 @@ import SpecificationGeneralForm from './productAdmin/1.specificationGeneralForm'
 import SpecificationDimForm from './productAdmin/2.specificationDimForm'
 import SpecificationDisForm from './productAdmin/3.specificationDisForm'
 import SpecificationPerForm from './productAdmin/4.specificationPerForm'
+import SpecificationCamBatForm from './productAdmin/5.specificationCambatForm'
 
 const steps =
     [
@@ -14,6 +15,7 @@ const steps =
       {name: 'Dimension Specification',component: <SpecificationDimForm />},
       {name: 'Display Specification',component: <SpecificationDisForm />},
       {name: 'Performance Specification',component: <SpecificationPerForm />},
+      {name: 'Camera Battery',component: <SpecificationCamBatForm />},
     ]
 
 class Steps extends React.Component {

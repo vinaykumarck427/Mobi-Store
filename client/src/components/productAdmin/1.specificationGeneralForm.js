@@ -13,6 +13,21 @@ class SpecificationGeneralForm extends React.Component {
             brand:'',
             fourG:'',
             threeG:'',
+            height: '',
+            width: '',
+            thickness: '',
+            weight: '',
+            colors: '',
+            screenSize: '',
+            screenResolution: '',
+            aspectRatio: '',
+            pixelDensity: '',
+            displayType: '',
+            chipset: '',
+            processor: '',
+            ram: '',
+            internalStorage: '',
+            isExpandable: '',
             brands: []
         }
         this.handleChange = this.handleChange.bind(this)
