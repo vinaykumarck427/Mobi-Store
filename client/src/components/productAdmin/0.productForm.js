@@ -25,15 +25,15 @@ class ProductForm extends React.Component {
             <div>
                 <form>
                     <label>
-                        ProductName
+                        ProductName <br />
                         <input type = "text" value={this.state.productName} onChange = {this.handleChange} name = "productName" />
                     </label><br />
                     <label>
-                        Image
+                        Image <br />
                         <input type = "text" value={this.state.image} onChange = {this.handleChange} name = "image"/>                        
                     </label><br/>
                     <label>
-                        Product Price
+                        Product Price <br />
                         <input type = "number" value={this.state.productPrice} onChange = {this.handleChange} name = "productPrice"/>
                     </label><br />
                 </form>

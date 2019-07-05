@@ -4,8 +4,12 @@ const Schema = mongoose.Schema
 
 const BrandList = new Schema({
     brandName:{
-        title: String,
+        type: String,
         required: true
+    },
+    createdAt:{
+        type: Date,
+        default: Date.now()
     }
 })
 

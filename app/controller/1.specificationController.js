@@ -4,10 +4,10 @@ const Specification = require('../model/1.0.specification')
 module.exports.list = (req,res) => {
           Specification.find()
           .then(specifications => {
-                    res.json(specifications)
+                res.json(specifications)
           })
           .catch(err => {
-                    res.send(err)
+                res.send(err)
           })
 }
 
