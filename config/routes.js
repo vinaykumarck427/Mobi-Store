@@ -11,11 +11,11 @@ router.get('/products/:id', productController.show)
 router.put('/product/:id',productController.update)
 router.delete('/product/:id',productController.destroy)
 
-router.get('/specifications', productController.list)
-router.post('/specifications', productController.create)
-router.get('/specifications/:id', productController.show)
-router.put('/specifications/:id', productController.update)
-router.delete('/specifications/:id', productController.destroy)
+router.get('/specifications', specificationController.list)
+router.post('/specifications', specificationController.create)
+router.get('/specifications/:id', specificationController.show)
+router.put('/specifications/:id', specificationController.update)
+router.delete('/specifications/:id', specificationController.destroy)
 
 
 module.exports = router

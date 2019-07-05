@@ -6,6 +6,7 @@ const SpecificationSchema = new Schema({
     general:{
             launchDate:{
             type: Date,
+            default: Date.now(),
             required: true
         },
         brand:{
@@ -14,6 +15,7 @@ const SpecificationSchema = new Schema({
         },
         operatingSystem:{
             type: String,
+            default:'andriod 9.0',
             required: true
         },
         phonetype:{
@@ -43,61 +45,61 @@ const SpecificationSchema = new Schema({
     },
     designDimensions:{
         height:{
-            type: Number,
-            required: true
+            type: Number
+            // required: true
         },
         width:{
-            type: Number,
-            required: true  
+            type: Number
+            // required: true  
         },
         thickness:{
-            type: Number,
-            required: true
+            type: Number
+            // required: true
         },
         weight:{
-            type: Number,
-            required: true
+            type: Number
+            // required: true
         },
         color:{
-            type: String,
-            required: true
+            type: String
+            // required: true
         }
     },
     display:{
         screenSize:{
             type: Number,
-            required: true
+            // required: true
         },
         screenResolution:{
             type: Number,
-            required: true
+            // required: true
         },
         aspectRatio:{
             type: Number,
-            required: true
+            // required: true
         },
         pixelDensity:{
             type: Number,
-            required: true
+            // required: true
         },
         displayType:{
             type: String,
-            required: true
+            // required: true
         },
         
     },
     performance:{
         chipset:{
             type: String,
-            required: true
+            // required: true
         },
         processor:{
             type: String,
-            required: true
+            // required: true
         },
         ram:{
             type: Number,
-            required: true
+            // required: true
         },
         storage:{
             internalMemory:{
@@ -121,7 +123,7 @@ const SpecificationSchema = new Schema({
     battery:{
         capacity:{
             type: Number,
-            required: true
+            // required: true
         },
         replaceable:{
             type: Boolean,
