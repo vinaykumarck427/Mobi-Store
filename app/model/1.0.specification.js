@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const SpecificationSchema = new Schema({
     general:{
-            launchDate:{
+        launchDate:{
             type: Date,
             required: true
         },
