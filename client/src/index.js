@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import axios from './config/axios'
+import {BrowserRouter, Route, Link,Switch} from 'react-render-dom'
 
 
 
