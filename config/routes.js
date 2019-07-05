@@ -5,10 +5,17 @@ const specificationController = require('../app/controller/1.specificationContro
 const userController = require('../app/controller/2.userController')
 const compareController = require('../app/controller/3.compareController')
 
-router.get('/product',productController.list)
-router.get('/product/:id',productController.show)
-router.post('/product',productController.create)
+router.get('/products',productController.list)
+router.post('/products',productController.create)
+router.get('/products/:id', productController.show)
 router.put('/product/:id',productController.update)
 router.delete('/product/:id',productController.destroy)
+
+router.get('/specifications', productController.list)
+router.post('/specifications', productController.create)
+router.get('/specifications/:id', productController.show)
+router.put('/specifications/:id', productController.update)
+router.delete('/specifications/:id', productController.destroy)
+
 
 module.exports = router

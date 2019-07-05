@@ -7,11 +7,11 @@ module.exports.list = (req,res) => {
         res.json(products)
     })
     .catch((err) => {
-        res.json(err)
+        res.send(err)
     })
 }
 
-module.exports.create = ('/',(req,res) => {
+module.exports.create = (req,res) => {
     const body = req.body
     const product = new Product(body)
     product.save()
@@ -19,9 +19,9 @@ module.exports.create = ('/',(req,res) => {
             res.json(products)
         })
         .catch((err) =>{
-            res.json(err)
+            res.send(err)
         })
-})
+}
 
 module.exports.show = (req,res) => {
     const id = req.params.id
@@ -30,7 +30,7 @@ module.exports.show = (req,res) => {
             res.json(product)
         })
         .catch((err) => {
-            res.json(err)
+            res.send(err)
         })
 }
 

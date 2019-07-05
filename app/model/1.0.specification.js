@@ -8,13 +8,13 @@ const SpecificationSchema = new Schema({
         required: true
     },
     brand:{
-
+        type:String
     },
     operatingSystem:{
         type: String,
         required: true
     },
-    type:{
+    phoneType:{
         type: String,
         default: 'SmartPhone'
     },
