@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from '../../config/axios'
 
 class SpecificationDisForm extends React.Component {
     constructor(props){

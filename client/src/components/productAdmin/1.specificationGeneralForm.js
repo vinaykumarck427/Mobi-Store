@@ -26,7 +26,6 @@ class SpecificationGeneralForm extends React.Component {
     componentDidMount(){
         axios.get('/brands')
         .then((response) => {
-            console.log(response)
             this.setState(() => ({
                 brands: response.data
             }))
