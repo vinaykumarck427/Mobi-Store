@@ -124,7 +124,7 @@ const SpecificationSchema = new Schema({
         },
         gps:{
             type: String,
-            required: true
+            default: true
         }
     },
     connector:{
