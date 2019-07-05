@@ -5,15 +5,19 @@ class ProductForm extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            product: {
-                productName: "New"
-            }
+            productName: '',
+            image: '',
+            productPrice: ''
         }
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(e){
-        console.log(e.target.value)
+        e.persist()
+        console.log(this.props.onHandle)
+        this.setState(() => ({
+            [e.target.name] : e.target.value
+        }))
     }
     
     render() {
@@ -22,21 +26,16 @@ class ProductForm extends React.Component {
                 <form>
                     <label>
                         ProductName
-                        <input type = "text" value={this.state.product.productName} onChange = {this.handleChange} name = "productName" />
+                        <input type = "text" value={this.state.productName} onChange = {this.handleChange} name = "productName" />
                     </label><br />
                     <label>
                         Image
-                        <input>
-                        </input>
+                        <input type = "text" value={this.state.image} onChange = {this.handleChange} name = "image"/>                        
                     </label><br/>
                     <label>
                         Product Price
-                        <input>
-                        </input>
+                        <input type = "number" value={this.state.productPrice} onChange = {this.handleChange} name = "productPrice"/>
                     </label><br />
-                    <label>
-                        
-                    </label>
                 </form>
             </div>            
         )
