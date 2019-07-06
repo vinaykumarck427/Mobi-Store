@@ -15,10 +15,10 @@ const ProductSchema = new Schema({
         type: Number,
         default: 123
     },
-    reviews:{
-        type: String,
-        default: 'null'
-    },
+    // reviews:{
+    //     type: SChema.Types.ObjectId,
+    //     ref: ''
+    // },
     specification:{
         type: Schema.Types.ObjectId,
         ref: 'Specification'
