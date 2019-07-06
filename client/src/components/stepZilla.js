@@ -1,14 +1,14 @@
 import React from 'react'
 import StepZilla from 'react-stepzilla'
 
-import ProductForm from './productAdmin/0.productForm'
-import SpecificationGeneralForm from './productAdmin/1.specificationGeneralForm'
-import SpecificationDimForm from './productAdmin/2.specificationDimForm'
-import SpecificationDisForm from './productAdmin/3.specificationDisForm'
-import SpecificationPerForm from './productAdmin/4.specificationPerForm'
-import SpecificationCamBatForm from './productAdmin/5.specificationCambatForm'
-import SpecificationConForm from './productAdmin/6.specificationConForm'
-import SpecificationMulForm from './productAdmin/7.specificationMulForm'
+import ProductForm from './productAdmin/productForm'
+import SpecificationGeneralForm from './productAdmin/genSpecForm'
+import SpecificationDimForm from './productAdmin/dimSpecForm'
+import SpecificationDisForm from './productAdmin/disSpecForm'
+import SpecificationPerForm from './productAdmin/perSpecForm'
+import SpecificationCamBatForm from './productAdmin/camBatSpecForm'
+import SpecificationConForm from './productAdmin/conSpecForm'
+import SpecificationMulForm from './productAdmin/mulSpecForm'
 
 const steps =
     [
@@ -27,7 +27,7 @@ class Steps extends React.Component {
         return(
             <div>
                 <br />
-                <StepZilla steps={steps} showSteps={false}/>
+                <StepZilla steps={steps} />
             </div>
         )
     }
