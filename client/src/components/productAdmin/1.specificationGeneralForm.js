@@ -34,7 +34,6 @@ class SpecificationGeneralForm extends React.Component {
             isReplacable: '',
             wifi: '',
             bluetooth: '',
-            ram: '',
             gps: '',
             connector: '',
             multiMedia: '',
