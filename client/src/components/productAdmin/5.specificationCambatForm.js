@@ -38,7 +38,7 @@ class SpecificationCamBatForm extends React.Component {
                     <label>
                         Replacable<br />
                         <input type = "radio" value={true} onChange = {this.handleChange} name = "isReplacable"/> True
-                        <input type = "radio" value={false} onChange = {this.handleChange} name = "isReplacable"/> False
+                        <input type = "radio" value={false} onChange = {this.handleChange} name = "isReplacable"/> False<br />
                     </label><br />
                 </form>
             </div>            

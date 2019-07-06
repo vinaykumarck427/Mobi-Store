@@ -46,7 +46,7 @@ class SpecificationPerForm extends React.Component {
                     <label>
                         Expandable<br />
                         <input type = "radio" value={true} onChange = {this.handleChange} name = "isExpandable"/> True
-                        <input type = "radio" value={false} onChange = {this.handleChange} name = "isExpandable"/> False
+                        <input type = "radio" value={false} onChange = {this.handleChange} name = "isExpandable"/> False<br />
                     </label><br />
                 </form>
             </div>            

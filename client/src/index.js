@@ -13,7 +13,7 @@ class App extends React.Component{
             <div>
                 <h1>Welcome to the App</h1>
                 <Link to ="/products"><h2>Add Product</h2></Link>
-                <Link to="products/show"><h2>Show Product</h2></Link>
+                <Link to="products/show"><h2>Show Product(added by postman)</h2></Link>
                 <Switch>
                     <Route path="/products" component={Steps} exact={true}/>
                     <Route path="/products/show" component={ProductShow} />

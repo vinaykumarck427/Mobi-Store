@@ -34,7 +34,7 @@ class ProductForm extends React.Component {
                     </label><br/>
                     <label>
                         Product Price <br />
-                        <input type = "number" value={this.state.productPrice} onChange = {this.handleChange} name = "productPrice"/>
+                        <input type = "number" value={this.state.productPrice} onChange = {this.handleChange} name = "productPrice"/><br />
                     </label><br />
                 </form>
             </div>            

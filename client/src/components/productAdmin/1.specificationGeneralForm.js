@@ -28,6 +28,19 @@ class SpecificationGeneralForm extends React.Component {
             ram: '',
             internalStorage: '',
             isExpandable: '',
+            cameraFrnt: '',
+            cameraBack: '',
+            batteryCapacity: '',
+            isReplacable: '',
+            wifi: '',
+            bluetooth: '',
+            ram: '',
+            gps: '',
+            connector: '',
+            multiMedia: '',
+            isFingerPrintSensor: '',
+            isQuickCharging: '',
+            audioJack: '',
             brands: []
         }
         this.handleChange = this.handleChange.bind(this)
@@ -86,7 +99,7 @@ class SpecificationGeneralForm extends React.Component {
                         <input type = "radio" value={true} onChange = {this.handleChange} name = "threeG"/> 3G
                     </label><br />
                     <label>
-                    Sim One<br />
+                        Sim Two<br />
                         <select value={this.state.simTwo} name = "simTwo" onChange={this.handleChange}>
                             <option value="">Select</option>
                             <option value="micro">Micro</option>
@@ -94,7 +107,7 @@ class SpecificationGeneralForm extends React.Component {
                             <option value="micro">Nano</option>
                         </select>
                         <input type = "radio" value={true} onChange = {this.handleChange} name = "fourG"/> 4G
-                        <input type = "radio" value={true} onChange = {this.handleChange} name = "threeG"/> 3G
+                        <input type = "radio" value={true} onChange = {this.handleChange} name = "threeG"/> 3G<br />
                     </label><br />
                 </form>
             </div>            

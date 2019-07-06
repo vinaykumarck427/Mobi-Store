@@ -42,7 +42,7 @@ class SpecificationDisForm extends React.Component {
                     </label><br />
                     <label>
                         Display Type <br />
-                        <input type = "text" value={this.state.displayType} onChange = {this.handleChange} name = "displayType"/>
+                        <input type = "text" value={this.state.displayType} onChange = {this.handleChange} name = "displayType"/> <br />
                     </label><br />
                 </form>
             </div>            
