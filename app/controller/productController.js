@@ -1,5 +1,5 @@
 const express = require('express')
-const Product = require('../model/0.product')
+const Product = require('../model/product')
 
 module.exports.list = (req,res) => {
     Product.find()

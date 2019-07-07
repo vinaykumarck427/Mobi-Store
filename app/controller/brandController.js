@@ -1,5 +1,5 @@
 const express = require('express')
-const Brands = require('../model/1.2.brands')
+const Brands = require('../model/brands')
 
 module.exports.list = (req,res) => {
     Brands.find()
