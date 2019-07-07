@@ -4,20 +4,28 @@ const Schema = mongoose.Schema
 const addressSchema = new Schema({
   addressType:{
     type:String,
-    default:true,
+    default:'home',
     required:true
   },
   street:{
-    type:String
+    type:String,
+    default:'24th cross'
   },
   city:{
-    type:String
+    type:String,
+    default:'banglore'
   },
   pinCode:{
-    type:Number
+    type:Number,
+    default:'560078'
   },
   landmark:{
-    type:String
+    type:String,
+  },
+  phoneNumber: {
+    type: Number,
+    required: true,
+    maxlength: 10
   },
   user:{
     type:Schema.Types.ObjectId,

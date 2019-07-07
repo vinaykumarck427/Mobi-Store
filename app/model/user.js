@@ -44,11 +44,6 @@ const userSchema = new Schema({
       type:Boolean,
       default:false
     },
-    phoneNumber:{
-      type:Number,
-      required:true,
-      maxlength:10
-    },
     userPhone:{
       type:Schema.Types.ObjectId,
       ref:'Product'
