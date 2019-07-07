@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const productController = require('../app/controller/0.productController')
-const specificationController = require('../app/controller/1.specificationController')
-const userController = require('../app/controller/2.userController')
-const compareController = require('../app/controller/3.compareController')
-const brandController = require('../app/controller/4.brandController')
+const productController = require('../app/controller/productController')
+const specificationController = require('../app/controller/specificationController')
+const userController = require('../app/controller/userController')
+const compareController = require('../app/controller/compareController')
+const authenticationUser = require('../app/middleware/authenticationUser')
+const brandController = require('../app/controller/brandController')
+const addressController = require('../app/controller/addressController')
 
 router.get('/products',productController.list)
 router.post('/products',productController.create)
@@ -20,6 +22,17 @@ router.delete('/specifications/:id', specificationController.destroy)
 
 router.get('/brands', brandController.list)
 router.post('/brands', brandController.create)
+
+router.post('/users/register',userController.register)
+router.post('/users/login',userController.login)
+router.delete('/users/logout',authenticationUser,userController.logout)
+router.get('/users/account',userController.account)
+
+router.get('/addressess', authenticationUser, addressController.list)
+router.post('/addressess', authenticationUser, addressController.create)
+router.get('/addressess/:id', authenticationUser, addressController.show)
+router.put('/addressess/:id', authenticationUser, addressController.update)
+router.delete('/addressess/:id', authenticationUser, addressController.destroy)
 
 
 module.exports = router

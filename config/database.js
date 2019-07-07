@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise
 mongoose.set('useFindAndModify',false)
 
 //connect to db
-mongoose.connect('mongodb://localhost:27017/mern-project-mobiapp', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/mern-project-mobiapp', { useNewUrlParser: true, useCreateIndex:true})
     .then(() => {
         console.log('Connected to the DB')
     })

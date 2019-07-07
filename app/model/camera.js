@@ -5,27 +5,27 @@ const Schema = mongoose.Schema
 const CameraSchema = new Schema({
     resolution:{
         type: String,
-        required: true
+        // required: true
     },
     isAutoFocus:{
         type: Boolean,
-        required: true
+        // required: true
     },
     physicalAperture:{
         type: String,
-        required: true
+        // required: true
     },
     flash:{
         type: Boolean,
-        required: true
+        // required: true
     },
     imageResolution:{
         type: Number,
-        required: true
+        // required: true
     },
     videoRecording:{
         type: String,
-        required: true
+        // required: true
     }
 })
 

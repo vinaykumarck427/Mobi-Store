@@ -1,5 +1,5 @@
 const express = require('express')
-const Specification = require('../model/1.0.specification')
+const Specification = require('../model/specification')
 
 module.exports.list = (req,res) => {
           Specification.find()
