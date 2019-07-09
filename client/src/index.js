@@ -17,7 +17,7 @@ store.subscribe(() => {
     console.log(store.getState())
 })
 let xauth = localStorage.getItem('userAuthToken')
-const url = 'http://cors-anywhere.herokuapp.com/http://localhost:3005/users/account'
+const url = 'http://localhost:3005/users/account'
 if (localStorage.getItem('userAuthToken')) {
     axios.get(url, {
         headers: {
@@ -26,6 +26,7 @@ if (localStorage.getItem('userAuthToken')) {
     })//http://cors-anywhere.herokuapp.com/
 
         .then(response => {
+            console.log(response)
             store.dispatch(setUser(response.data))
         })
         .catch (err => {

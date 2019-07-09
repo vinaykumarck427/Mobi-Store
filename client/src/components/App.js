@@ -1,6 +1,9 @@
+import React from 'react'
+
 /* packages */
-import React  from 'react'
 import {BrowserRouter,Route, Link, Switch} from 'react-router-dom'
+import _ from 'lodash';
+import {connect} from 'react-redux'
 
 /* components */
 import AddPage from './AddPage'
@@ -17,13 +20,13 @@ class App extends React.Component{
       <div>
         <BrowserRouter>
           <div>
-            {!localStorage.getItem('userAuthToken') && 
+            {_.isEmpty(localStorage.getItem('userAuthToken')) && 
             (<div>
               <Link to="/users/register" >Register</Link><br />
               <Link to="/users/login" >Login</Link>
               </div>)}
 
-            {localStorage.getItem('userAuthToken') && 
+            {!_.isEmpty(localStorage.getItem('userAuthToken')) && 
             (<div>
                   <Link to="/users/account">Account</Link><br/>
                   <Link to="/users/logout">Logout</Link>
@@ -47,4 +50,9 @@ class App extends React.Component{
     )
   }
 }
-export default App
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+export default connect(mapStateToProps)(App)
