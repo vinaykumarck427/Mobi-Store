@@ -1,31 +1,56 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 
-import AddPage from './components/AddPage'
-import ProductShow from './components/productAdmin/productShow'
+/* packages */
+import axios from 'axios';
+import { Provider } from 'react-redux'
 
-class App extends React.Component{
-    render(){
-        return(
-        <div>
-            <BrowserRouter>
-            <div>
-                <h1>Welcome to the App</h1>
-                <Link to ="/products"><h2>Add</h2></Link>
-                <Link to="products/show"><h2>Show(added by postman)</h2></Link>
-                <Switch>
-                    <Route path="/products" component={AddPage} exact={true}/>
-                    <Route path="/products/show" component={ProductShow} />
-                </Switch>
-            </div>
-            </BrowserRouter>        
-        </div>
-        )
-    }
+/* redux */
+import {setUser} from './actions/user'
+import configureStore from './store/storeConfige'
+
+/* components */
+import App from './components/App'
+
+const store = configureStore()
+store.subscribe(() => {
+    console.log(store.getState())
+})
+let xauth = localStorage.getItem('userAuthToken')
+const url = 'http://cors-anywhere.herokuapp.com/http://localhost:3005/users/account'
+if (localStorage.getItem('userAuthToken')) {
+    axios.get(url, {
+        headers: {
+            'x-auth': xauth
+        }
+    })//http://cors-anywhere.herokuapp.com/
+
+        .then(response => {
+            store.dispatch(setUser(response.data))
+        })
+        .catch (err => {
+            console.log(err)
+        })
+    // let user;
+    // const xhr = new XMLHttpRequest()
+    // xhr.open('GET', url)
+    // xhr.setRequestHeader('x-auth',xauth) 
+    // xhr.send()
+    // xhr.onload = function () {
+    //     user = JSON.parse(xhr.responseText)
+    //     console.log(user)
+    //     store.dispatch(setUser(user))
+    // }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const provider = (
+    <Provider store={store}>
+        <App />
+        {/* <MyComponent /> */}
+    </Provider>
+)
+
+ReactDOM.render(provider, document.getElementById('root'))
 
 
 
