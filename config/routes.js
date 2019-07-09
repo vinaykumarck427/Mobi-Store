@@ -6,6 +6,7 @@ const userController = require('../app/controller/userController')
 const compareController = require('../app/controller/compareController')
 const authenticationUser = require('../app/middleware/authenticationUser')
 const brandController = require('../app/controller/brandController')
+const reviewController = require('../app/controller/reviewController')
 const addressController = require('../app/controller/addressController')
 
 router.get('/products',productController.list)
@@ -33,6 +34,12 @@ router.post('/addressess', authenticationUser, addressController.create)
 router.get('/addressess/:id', authenticationUser, addressController.show)
 router.put('/addressess/:id', authenticationUser, addressController.update)
 router.delete('/addressess/:id', authenticationUser, addressController.destroy)
+
+router.get('/reviews', reviewController.list)
+router.post('/reviews', authenticationUser, reviewController.create)
+router.get('/reviews/:id', reviewController.show)
+router.put('/reviews/:id', authenticationUser, reviewController.update)
+router.delete('/reviews/:id', authenticationUser, reviewController.destroy)
 
 
 module.exports = router
