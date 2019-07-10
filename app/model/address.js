@@ -4,8 +4,7 @@ const Schema = mongoose.Schema
 const addressSchema = new Schema({
   addressType:{
     type:String,
-    default:'home',
-    required:true
+    default:'home'
   },
   street:{
     type:String,
