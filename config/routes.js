@@ -8,6 +8,7 @@ const authenticationUser = require('../app/middleware/authenticationUser')
 const brandController = require('../app/controller/brandController')
 const reviewController = require('../app/controller/reviewController')
 const addressController = require('../app/controller/addressController')
+const commentController = require('../app/controller/commentController')
 
 router.get('/products',productController.list)
 router.post('/products',productController.create)
@@ -27,7 +28,7 @@ router.post('/brands', brandController.create)
 router.post('/users/register',userController.register)
 router.post('/users/login',userController.login)
 router.delete('/users/logout',authenticationUser,userController.logout)
-router.get('/users/account',userController.account)
+router.get('/users/account', authenticationUser, userController.account)
 
 router.get('/addressess', authenticationUser, addressController.list)
 router.post('/addressess', authenticationUser, addressController.create)
@@ -40,6 +41,9 @@ router.post('/reviews', authenticationUser, reviewController.create)
 router.get('/reviews/:id', reviewController.show)
 router.put('/reviews/:id', authenticationUser, reviewController.update)
 router.delete('/reviews/:id', authenticationUser, reviewController.destroy)
+
+router.get('/comments', commentController.list)
+router.post('/comments', authenticationUser, commentController.create)
 
 
 module.exports = router
