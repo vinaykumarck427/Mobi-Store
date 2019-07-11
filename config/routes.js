@@ -24,6 +24,8 @@ router.delete('/specifications/:id', specificationController.destroy)
 
 router.get('/brands', brandController.list)
 router.post('/brands', brandController.create)
+router.put('/brands/:id',brandController.update)
+router.delete('/brands/:id',brandController.destroy)
 
 router.post('/users/register',userController.register)
 router.post('/users/login',userController.login)
