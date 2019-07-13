@@ -23,7 +23,7 @@ class ReviewForm extends Component{
       issues:this.state.issues,
       rating:this.state.rating
     }
-    console.log(formData)
+    this.props.handleSubmit(formData)
   }
   render(){
     return (

@@ -37,13 +37,13 @@ router.put('/addressess/:id', authenticationUser, addressController.update)
 router.delete('/addressess/:id', authenticationUser, addressController.destroy)
 
 router.get('/reviews', reviewController.list)
-router.post('/reviews', authenticationUser, reviewController.create)
+router.post('/reviews', reviewController.create)
 router.get('/reviews/:id', reviewController.show)
-router.put('/reviews/:id', authenticationUser, reviewController.update)
-router.delete('/reviews/:id', authenticationUser, reviewController.destroy)
+router.put('/reviews/:id', reviewController.update)
+router.delete('/reviews/:id', reviewController.destroy)
 
 router.get('/comments', commentController.list)
-router.post('/comments', authenticationUser, commentController.create)
+router.post('/comments', commentController.create)
 
 
 module.exports = router

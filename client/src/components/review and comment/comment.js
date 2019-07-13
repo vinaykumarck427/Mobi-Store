@@ -1,28 +1,20 @@
 import React from 'react'
 import axios from 'axios'
+import CommentForm from './commentForm'
 
 class Comment extends React.Component{
-  constructor(){
-    super()
-    this.state = {
-      comments : []
+    handleSubmit = (data) => {
+        axios.post('http://localhost:3005/comments',data)
+        .then(response => {
+            console.log(response.data)
+        })
     }
-  }
-  componentDidMount(){
-    axios.get('https://localhost:3005/comments')
-    .then(response => {
-      console.log(response.data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
-  render(){
-    return(
-      <div>
-        <h2></h2>
-      </div>
-    )
-  }
+    render(){
+        return(
+            <div>
+                <CommentForm handleSubmit={this.handleSubmit} />
+            </div>
+        )
+    }
 }
 export default Comment
