@@ -16,7 +16,7 @@ const ProductSchema = new Schema({
         default: 123
     },
     reviews:{
-        type: SChema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Review'
     },
     specification:{
