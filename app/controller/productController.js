@@ -12,11 +12,13 @@ module.exports.list = (req,res) => {
 }
 
 module.exports.create = (req,res) => {
+    const {user} = req
     const body = req.body
     const product = new Product(body)
+    product.user = user._id
     product.save()
-        .then((products) => {
-            res.json(products)
+        .then((product) => {
+            res.json(product)
         })
         .catch((err) =>{
             res.send(err)

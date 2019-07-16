@@ -42,7 +42,7 @@ const userSchema = new Schema({
   }],
     isAdmin:{
       type:Boolean,
-      default:false
+      default:true
     },
     userPhone:{
       type:Schema.Types.ObjectId,

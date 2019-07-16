@@ -1,156 +1,250 @@
 const mongoose = require('mongoose')
+const Product = require('./product')
 
 const Schema = mongoose.Schema
 
 const SpecificationSchema = new Schema({
-    general:{
-        launchDate:{
-            type: Date,
-            default: Date.now()
-        },
-        brand:{
+  product:{
+		type: Schema.Types.ObjectId,
+		ref: 'User'
+	},
+  general: {
+    launchDate: {
+      type: Date
+    },
+    brand: {
+      type: Schema.Types.ObjectId,
+      ref: "Brand"
+    },
+    model: {
+      type: String
+    },
+    operatingSystem: {
+      type: String,
+      default: "andriod 9.0"
+    },
+    phonetype: {
+      type: String,
+      default: "SmartPhone"
+    },
+    simSlot: [
+      {
+        sim: {
+          type: String,
+          number: Number,
+          isVolTE: Boolean,
+          size: String,
+          network: {
             type: Schema.Types.ObjectId,
-            ref: 'Brand'
-        },
-        operatingSystem:{
-            type: String,
-            default:'andriod 9.0'
-        },
-        phonetype:{
-            type: String,
-            default: 'SmartPhone'
-        },
-        simSlot:{
-            simOne:{
-                type: String,
-                isVolTE: Boolean,
-                required: true,
-                network:{
-                    type: Schema.Types.ObjectId,
-                    ref:'Network'
-                }
-            },
-            simTwo:{
-                type: String,
-                isVolTE: Boolean,
-                default:'null',
-                network:{
-                    type: Schema.Types.ObjectId,
-                    ref: 'network'
-                }
-            }
+            ref: "Network"
+          }
         }
+      }
+    ]
+  },
+  design: {
+    height: {
+      type: Number
     },
-    designDimensions:{
-        height:{
-            type: Number
-        },
-        width:{
-            type: Number 
-        },
-        thickness:{
-            type: Number
-        },
-        weight:{
-            type: Number
-        },
-        color:{
-            type: String
-        }
+    width: {
+      type: Number
     },
-    display:{
-        screenSize:{
-            type: Number
-        },
-        screenResolution:{
-            type: Number
-        },
-        aspectRatio:{
-            type: Number
-        },
-        pixelDensity:{
-            type: Number
-        },
-        displayType:{
-            type: String
-        },
-        
+    thickness: {
+      type: Number
     },
-    performance:{
-        chipset:{
-            type: String
-        },
-        processor:{
-            type: String
-        },
-        ram:{
-            type: Number
-        },
-        storage:{
-            internalMemory:{
-                type: Number,
-                default: 16
-            },
-            isExpandable:{
-                type: String,
-                default:false
-            }
-        }
+    weight: {
+      type: Number
     },
-    cameraFrnt:{
-        type: Schema.Types.ObjectId,
-        ref: 'Camera'
+    colors: [
+      {
+        type: String
+      }
+    ],
+    waterProof: {
+      type: String
+    }
+  },
+  display: {
+    screenSize: {
+      type: Number
     },
-    cameraBack:{
-        type: Schema.Types.ObjectId,
-        ref: 'Camera'
+    screenResolution: {
+      type: Number
     },
-    battery:{
-        capacity:{
-            type: Number
-        },
-        replaceable:{
-            type: Boolean,
-            default: false
-        }
+    aspectRatio: {
+      type: Number
     },
-    connectivity:{
-        wifi:{
-            type: String,
-            default: '2.4 only'
-        },
-        bluetooth:{
-            type: String,
-            default:'4.0',
-        },
-        gps:{
-            type: String,
-            default: true
-        }
+    pixelDensity: {
+      type: Number
     },
-    connector:{
+    displayType: {
+      type: String
+    },
+    screenProtection: {
+      type: String
+    },
+    touchScreen: {
+      type: String
+    },
+    screenToBodyRatio: {
+      type: Number
+    }
+  },
+  performance: {
+    chipset: {
+      type: String
+    },
+    processor: {
+      type: String
+    },
+    architecture: {
+      type: Number,
+      default: 64
+    },
+    ram: {
+      type: Number
+    },
+    graphics: {
+      type: String
+    }
+  },
+  storage: {
+    internalMemory: {
+      type: Number,
+      default: 64
+    },
+    Expandable: {
+      type: Number,
+      default: false
+    },
+    isOtgSupport: {
+      type: Boolean,
+      default: false
+    }
+  },
+  camera: {
+    front: {
+      resolution: {
+        type: Number
+      },
+      physicalAperture: {
+        type: String
+      },
+      videoRecoring: {
+        type: String
+      }
+    },
+    back: {
+      resolution: {
+        type: Number
+      },
+      sensor: {
+        type: String
+      },
+      autoFocus: {
         type: String,
-        default: 'micro-USB'
-    },
-    multimedia:{
+        default: "Phase Detection autofocus"
+      },
+      flash: {
         type: String,
-        default: 'FM Radio'
+        default: "LED Flash"
+      },
+      physicalAperture: {
+        type: String
+      },
+      imageResolution: {
+        type: Number
+      },
+      setting: {
+        type: String,
+        default: "Exposure compensation, ISO control"
+      },
+      mode: {
+        type: String,
+        default: "Continuos Shooting, High Dynamic Range mode (HDR), Burst mode"
+      },
+      cameraFeatures: {
+        type: String,
+        default: "Digital Zoom, Auto Flash, Face detection, Touch to focus"
+      },
+      videoRecoring: {
+        type: String
+      }
+    }
+  },
+  battery: {
+    capacity: {
+      type: Number
     },
-    specialFeature:{
-        isFingerPrintSensor:{
-            type: Boolean,
-            default: false
-        },
-        isQuickCharging:{
-            type: Boolean,
-            default: false
-        },
-        audioJack:{
-            type: String,
-            default: '3.5mm'
-        }
-    }    
-})
+    batteryType: {
+      type: String,
+      default: "Li-Polymer"
+    },
+    replaceable: {
+      type: Boolean,
+      default: false
+    },
+    batteryLife: {
+      type: String,
+      default: "Up to 251 Hours(2G)"
+    }
+  },
+  netCnctvty: {
+    suport: {
+      type: String
+    },
+    wifi: {
+      support: {
+        type: String,
+        default: "2.4 only"
+      },
+      features: {
+        type: String,
+        default: "mobile hotspot"
+      }
+    },
+    bluetooth: {
+      type: String,
+      default: "5.0"
+    },
+    gps: {
+      type: String,
+      default: "with A-GPS, Glonass"
+    },
+    connectivity: {
+        type: String,
+        default: "	Mass storage device, USB charging"
+    }
+  },
+  multimedia: {
+    loudSpeaker: {
+      type: String,
+      default: "Yes"
+    },
+    audioJack: {
+      type: String,
+      default: "3.5mm"
+    }
+  },
+  specialFeature: {
+    isFingerPrintSensor: {
+      type: Boolean,
+      default: false
+    },
+    fingerPrintSensorPosition: {
+      type: String,
+      default: "Rear"
+    },
+    isQuickCharging: {
+      type: Boolean,
+      default: false
+    },
+    otherSensors: {
+      type: String,
+      default: "Light sensor, Proximity sensor, Accelerometer, Compass, Gyroscope"
+    }
+  }
+});
 
 const Specification = mongoose.model('Specification', SpecificationSchema)
 
