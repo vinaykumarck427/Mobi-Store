@@ -11,20 +11,8 @@ const ProductSchema = new Schema({
         type: String
     }],
     productPrice:{
-<<<<<<< HEAD
-        type: Number
-=======
         type: Number,
         default: 123
-    },
-    reviews:{
-        type: Schema.Types.ObjectId,
-        ref: 'Review'
-    },
-    specification:{
-        type: Schema.Types.ObjectId,
-        ref: 'Specification'
->>>>>>> reactStepZilla
     },
     createdAt:{
         type: Date,
