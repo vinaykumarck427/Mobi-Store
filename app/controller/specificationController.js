@@ -12,7 +12,6 @@ module.exports.list = (req,res) => {
 }
 
 module.exports.create = (req,res) => {
-          const body = req.body
           const specification = new Specification(req.body)
           specification.save()
           .then(specification => {
