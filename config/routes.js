@@ -7,12 +7,8 @@ const authenticateUser = require("../app/middleware/authenticateUser")
 const productController = require('../app/controller/productController')
 const specificationController = require('../app/controller/specificationController')
 const userController = require('../app/controller/userController')
-<<<<<<< HEAD
 const compareController = require('../app/controller/compareController')
-=======
-// const compareController = require('../app/controller/compareController')
-const authenticationUser = require('../app/middleware/authenticationUser')
->>>>>>> reactStepZilla
+
 const brandController = require('../app/controller/brandController')
 const reviewController = require('../app/controller/reviewController')
 const addressController = require('../app/controller/addressController')
@@ -30,17 +26,10 @@ router.get('/specifications/:id', specificationController.show)
 router.put('/specifications/:id',authenticationUser,authenticateUser, specificationController.update)
 router.delete('/specifications/:id',authenticationUser,authenticateUser, specificationController.destroy)
 
-<<<<<<< HEAD
 router.get("/brands", brandController.list);
 router.post('/brands', authenticationUser,authenticateUser, brandController.create)
 // router.put("/brands/:id",authenticationUser,authenticateUser, brandController.update);
 // router.delete("/brands/:id",authenticationUser,authenticateUser,brandController.destroy);
-=======
-router.get('/brands', brandController.list)
-router.post('/brands', brandController.create)
-// router.put('/brands/:id',brandController.update)
-// router.delete('/brands/:id',brandController.destroy)
->>>>>>> reactStepZilla
 
 router.post('/users/register',userController.register)
 router.post('/users/login',userController.login)

@@ -37,9 +37,13 @@ module.exports.show = (req,res) => {
 }
 
 module.exports.update = (req,res) => {
+    const {user} = req
     const id = req.params.id
     const body = req.body
-    Product.findByIdAndUpdate(id, {$set: body}, {new: true})
+    Product.findOneAndUpdate({
+        _id:id,
+        user:user._id
+    },{$set: body}, {new: true})
         .then((product) => {
             res.json(product)
         })
@@ -49,8 +53,12 @@ module.exports.update = (req,res) => {
 }
 
 module.exports.destroy = (req,res) => {
+    const {user} = req
     const id =req.parasms.id
-    Product.findByIdAndDelete(id)
+    Product.findOneAndDelete({
+        _id:id,
+        user:user._id
+    })
         .then((product) => {
             res.json(product)
         })
